@@ -9,7 +9,7 @@ const start = async () => {
     try {
         await connectDB(process.env.MONGOURI);
     app.listen(PORT, ()=>{
-        console.log(`Server is listening at port ${PORT}`)
+        console.log(`Server is listening at port ${PORT}...`)
     })
     } catch (error) {
         console.log(error)
