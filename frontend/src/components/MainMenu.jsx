@@ -7,10 +7,6 @@ const MainMenu = () => {
       <nav>
         <Link to="/">Dashboard</Link> { ' '}
         <Link to="/about">About</Link>
-        <Link to="/">Dashboard</Link> { ' '}
-        <Link to="/about">About</Link>
-        <Link to="/">Dashboard</Link> { ' '}
-        <Link to="/about">About</Link>
       </nav>
         </div>
     );
