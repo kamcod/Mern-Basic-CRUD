@@ -2,7 +2,11 @@ const About = () => {
     return(
         <div>
             <h1>About</h1>
-            about site
+            <form>
+                <label htmlFor="name" />
+                <input id="name" name="name" />
+                <button type="button" onClick={addData}>Add</button>
+            </form>
         </div>
     );
 }
