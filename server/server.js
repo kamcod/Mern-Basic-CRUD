@@ -8,7 +8,6 @@ dotenv.config({path: 'config/config.env'});
 
 
 
-
 const port = 5002;
 
 const start = async () =>{
