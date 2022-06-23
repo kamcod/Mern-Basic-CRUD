@@ -11,8 +11,7 @@ const router = require('./routes/routes');
 dotenv.config({path: 'config/config.env'});
 
 
-
-
+app.use(express.json());
 app.use('/', router);
 
 

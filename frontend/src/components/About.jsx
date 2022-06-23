@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 const About = () => {
 
@@ -7,7 +8,18 @@ const About = () => {
 
 
     const addData = async () => {
-        console.log("data", employee, designation, salary);
+        const data = {
+            name: employee,
+            designation,
+            salary
+        };
+        await axios.post('http://localhost:5002/addNewEmployee', data)
+        .then((response) =>{
+            console.log("data is successfully inserted in DB")
+        })
+        .catch((err) => {
+            console.log(err.message);
+        })
 
     };
     return(
