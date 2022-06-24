@@ -8,7 +8,11 @@ const EditModal = ({closePopup, id, name, desig, sal, refetchData, }) => {
 
 
     const editRecord = async () => {
-        await axios.patch(`http://localhost:5002/getDashboardStats/${id}`)
+        await axios.patch(`http://localhost:5002/getDashboardStats/${id}`, {
+            name: employee,
+            designation,
+            salary
+        })
         .then((response)=>{
             console.log("successfully updated");
             refetchData();

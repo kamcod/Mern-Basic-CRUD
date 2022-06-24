@@ -28,4 +28,20 @@ const deleteEmployee = async (req, res) => {
     }
 };
 
-module.exports = {createNewEmployee, readEmployeeData, deleteEmployee}
+const updateEmployee = async (req, res) =>{
+    try {
+        const {id: taskId} = req.params;
+        const task = await Tasks.findOneAndUpdate({_id: taskId}, req.body, {
+            new: true,
+            runValidator: true
+        })
+        if(!task){
+            return res.status(404).json({msg:`No record found for this id`})
+        }
+        res.status(200).json({task});
+    } catch (error) {
+        res.status(500).json({error});
+    }
+}
+
+module.exports = {createNewEmployee, readEmployeeData, deleteEmployee, updateEmployee}
